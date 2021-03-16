@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+	Introspect by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Climate Data Challenge - The Science</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="logo">Climate Data Challenge</a>
+				<nav id="nav">
+					<a href="index.html">Home</a>
+					<a href="science.html">The Science</a>
+					<a href="action.html">Take Action</a>
+				</nav>
+			</div>
+		</header>
+		<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Main -->
+		<section id="main">
+			<div class="inner">
+				<header class="major special">
+					<h1>The Science</h1>
+					<p>Increases in ocean temperatures</p>
+				</header>
+				<!-- <a href="#" class="image fit"><img src="images/cop.png" alt="" /></a> -->
+				<iframe id="wake" src="https://climatedatachallenge.s3.eu-west-2.amazonaws.com/index.html"></iframe>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<div class="copyright">Website design &copy; <a href="https://templated.co/">TEMPLATED</a>. Images <a href="https://unsplash.com/">Unsplash</a></div>
+			</div>
+		</section>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			const wakeStyle = document.getElementById('wake').style;
+			wakeStyle.width = '100%';
+			wakeStyle.height = window.innerHeight / 2 + 'px';
+		</script>
+	</body>
+</html>
