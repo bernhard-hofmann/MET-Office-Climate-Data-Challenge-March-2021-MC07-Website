@@ -99,6 +99,13 @@
 			</div>
 		</section>
 
+		<section>
+			<div class="inner">
+				<h1>IPPC net zero by 2050</h1>
+				<h3 id="countDown"></h3>
+			</div>
+		</section>
+
 		<!-- Footer -->
 		<section id="footer">
 			<div class="inner">
@@ -111,5 +118,32 @@
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script>
+			function convertMS(ms) {
+				var w, d, h, m, s;
+				s = Math.floor(ms / 1000);
+				m = Math.floor(s / 60);
+				s = s % 60;
+				h = Math.floor(m / 60);
+				m = m % 60;
+				d = Math.floor(h / 24);
+				h = h % 24;
+				w = Math.floor(d / 7);
+				d = d % 7;
+				return { w: w, d: d, h: h, m: m, s: s };
+			}
+
+			function humanise(remaining) {
+				return `${remaining.w} week${remaining.w === 1 ? '' : 's'}` + ` ${remaining.d} day${remaining.d === 1 ? '' : 's'}` + ` ${remaining.h} hour${remaining.h === 1 ? '' : 's'}` + ` ${remaining.m} minute${remaining.m === 1 ? '' : 's'}` + ` ${remaining.s} second${remaining.s === 1 ? '' : 's'}`;
+			}
+
+			function setClock() {
+				let e = document.getElementById('countDown');
+				ticksLeft = new Date('2050-01-01') - new Date();
+				const remaining = convertMS(ticksLeft);
+				e.innerText = humanise(remaining);
+			}
+			window.setInterval(setClock, 1000);
+		</script>
 	</body>
 </html>
