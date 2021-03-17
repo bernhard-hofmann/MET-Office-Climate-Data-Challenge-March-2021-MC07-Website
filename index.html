@@ -121,9 +121,8 @@
 				</p>
 				<h3>Findings</h3>
 				<p>Time series</p>
-				TODO: Heiko
-				Static images showing changes (Date and scale)
-				Slider to select image for a given year
+				<img id="timeSeriesImage" src="images/PML/Hack2014.png" style="width:100%">
+				<input type="range" id="year" min="1" max="6" style="width:100%" value="1" onchange="setTimeSeriesImage()">
 				<ul class="actions">
 					<li><a href="science.html" class="button alt">Learn More</a></li>
 				</ul>
@@ -177,75 +176,6 @@
 			</div>
 		</section>
 
-		<!--
-			<section id="two">
-			<div class="inner">
-				<article>
-					<div class="content">
-						<header>
-							<h3>Pellentesque adipis</h3>
-						</header>
-						<div class="image fit">
-							<img src="images/pic01.jpg" alt="" />
-						</div>
-						<p>Cumsan mollis eros. Pellentesque a diam sit amet mi magna ullamcorper vehicula. Integer adipiscin sem. Nullam quis massa sit amet lorem ipsum feugiat tempus.</p>
-					</div>
-				</article>
-				<article class="alt">
-					<div class="content">
-						<header>
-							<h3>Morbi interdum mol</h3>
-						</header>
-						<div class="image fit">
-							<img src="images/pic02.jpg" alt="" />
-						</div>
-						<p>Cumsan mollis eros. Pellentesque a diam sit amet mi magna ullamcorper vehicula. Integer adipiscin sem. Nullam quis massa sit amet lorem ipsum feugiat tempus.</p>
-					</div>
-				</article>
-			</div>
-		</section>
-
-		<section id="three">
-			<div class="inner">
-				<article>
-					<div class="content">
-						<span class="icon fa-laptop"></span>
-						<header>
-							<h3>Tempus Feugiat</h3>
-						</header>
-						<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna lorem ullamcorper laoreet, lectus arcu.</p>
-						<ul class="actions">
-							<li><a href="#" class="button alt">Learn More</a></li>
-						</ul>
-					</div>
-				</article>
-				<article>
-					<div class="content">
-						<span class="icon fa-diamond"></span>
-						<header>
-							<h3>Aliquam Nulla</h3>
-						</header>
-						<p>Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed.</p>
-						<ul class="actions">
-							<li><a href="#" class="button alt">Learn More</a></li>
-						</ul>
-					</div>
-				</article>
-				<article>
-					<div class="content">
-						<span class="icon fa-laptop"></span>
-						<header>
-							<h3>Sed Magna</h3>
-						</header>
-						<p>Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula.</p>
-						<ul class="actions">
-							<li><a href="#" class="button alt">Learn More</a></li>
-						</ul>
-					</div>
-				</article>
-			</div>
-		</section> -->
-
 		<!-- Footer -->
 		<section id="footer">
 			<div class="inner">
@@ -258,5 +188,14 @@
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script>
+			function setTimeSeriesImage() {
+				const e = document.getElementById("timeSeriesImage");
+				const v = document.getElementById("year").value;
+				console.log(v);
+				const images = ["1995","1996","1998","2014","2015","2018"];
+				e.src = "images/PML/Hack"+ images[v-1] +".png";
+			}
+		</script>
 	</body>
 </html>
